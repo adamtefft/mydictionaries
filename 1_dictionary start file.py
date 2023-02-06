@@ -7,14 +7,14 @@ phonebook = {'Chris': '555−1111',
 
 mydictionary = dict(m=8, n=9)
 
-print(mydictionary)
 
-print(len(phonebook))
-'''
 print()
 print('*****  start section 1 - print dictionary ********')
 print()
 
+print(mydictionary)
+
+print(len(phonebook))
 
 print()
 print('*****  end section 1 ********')
@@ -41,9 +41,6 @@ print('*****  end section 2 ********')
 print()
 
 
-
-
-
 print()
 print('*****  start section 3 - edit/append dictionary ********')
 print()
@@ -55,14 +52,12 @@ phonebook["Joe"] = "555-0123"
 
 print(phonebook)
 
-#this updated the value of the phone number for Chris
-#joe did not exist, so Joe and his phone number were appended to the dictionary
+# this updated the value of the phone number for Chris
+# joe did not exist, so Joe and his phone number were appended to the dictionary
 
 print()
 print('*****  end section 3 ********')
 print()
-
-
 
 
 print()
@@ -73,12 +68,11 @@ print(phonebook)
 del phonebook["Chris"]
 print(phonebook)
 
-#this will delete Chris from the dictionary
+# this will delete Chris from the dictionary
 
 print()
 print('*****  end section 4 ********')
 print()
-
 
 
 print()
@@ -106,9 +100,6 @@ for ph_tuple in phonebook.items():
 print()
 print('*****  end section 5 ********')
 print()
-
-
-
 
 
 print()
@@ -147,7 +138,6 @@ print('*****  end section 7 ********')
 print()
 
 
-
 print()
 print('*****  start section 8 - using popitem ********')
 print()
@@ -167,8 +157,6 @@ print(phonebook)
 print()
 print('*****  end section 8 ********')
 print()
-
-'''
 
 
 print()

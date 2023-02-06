@@ -10,7 +10,7 @@ person["pets"] = {"dog": "Fido", "cat": "Sox"}
 print(person)
 
 # the name of the second child
-
+''''
 print(type(person["children"]))
 print(person["children"][1])
 
@@ -29,3 +29,4 @@ for i in person["children"]:
 # "Type of pet: dog name  of pet: Fido"
 for i, j in person["pets"].items():
     print(f"Type of pet: {i} name of pet: {j}")
+'''
