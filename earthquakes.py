@@ -33,5 +33,17 @@ Latitude: 14.7628
 '''
 
 
-
 import json
+
+# PROBLEM 1
+print("This is the solution for problem 1")
+infile = open('eq_data.json', 'r')
+earthquake = json.load(infile)
+
+print(len())
+print(type(earthquake))
+
+print(len(earthquake))
+print("This is the end of problem 1")
+
+# PROBLEM 2
