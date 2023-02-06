@@ -55,6 +55,7 @@ for school in schools:
     if school['NCAA']["NAIA conference number football (IC2020)"] in conference_schools:
         if school["Graduation rate  women (DRVGR2020)"] > 80:
             if school["Total price for in-state students living off campus (not with family)  2020-21 (DRVIC2020)"] > 50000:
+                # Why is this if statement not working?
                 print("School:", school["instnm"])
                 print("Graduation Rate for Women:",
                       school["Graduation rate  women (DRVGR2020)"])

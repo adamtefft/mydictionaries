@@ -212,16 +212,19 @@ ProduceDictionary = {
 
 for i in ProduceDictionary:
     total = ProduceDictionary[i]['cost'] * ProduceDictionary[i]['amt_sold']
-    # the [i] is referring to the produce name at the beginning of each dictionary. The [cost] and [amt_sold] is drilling down items in the dictionary
+    # FIGURE OUT HOW TO FORMAT TO 2 DECIMAL PLACES
+
+    # the [i] is referring to the produce name (the first dictionary) inside the big dictionary, ProduceDictionary. The [cost] and [amt_sold] is drilling down items in the dictionary
     print(total)
     # this will print the total from each dictionary, it is not necessary in this problem, just for understanding
 
     stated_total = ProduceDictionary[i]['total']
     # this function pulls every integer that comes after 'total' from each dictionary
-
+    cost = ProduceDictionary[i]['cost']
     if total != stated_total:
         # if the total that is calculated does not match up to the total in the dictionary, then it will print the elements from the dictionary
         print(f'produce name: {i}')
-        print(f'cost: {i}')
-        print(f'amt_sold: {stated_total}')
-        print(f'total: {total}')
+        print(f'Cost: ${cost}')
+        print(f'Incorrect Total: ${stated_total}')
+        print(f'Correct Total: ${total}')
+        print("\n\n")
