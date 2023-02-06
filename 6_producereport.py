@@ -4,7 +4,7 @@ since it was manually entered. Print out the details of any produce that has in 
 as well as the calculated total that shows the discrepancy.
 '''
 
-ProduceDictionary={
+ProduceDictionary = {
     'Potatoes': {
         'cost': 0.86,
         'amt_sold': 39.8,
@@ -48,7 +48,7 @@ ProduceDictionary={
     'Celery': {
         'cost': 3.07,
         'amt_sold': 18.5,
-        'total': 56.8
+        'total': 56.79
     },
     'Spinach': {
         'cost': 4.12,
@@ -193,7 +193,7 @@ ProduceDictionary={
     'Brussels sprouts': {
         'cost': 1.65,
         'amt_sold': 22.9,
-        'total': 37.79
+        'total': 37.78
     },
     'Kale': {
         'cost': 5.02,
@@ -207,3 +207,21 @@ ProduceDictionary={
     }
 }
 
+# for i in ProduceDictionary:
+# print(sum(ProduceDictionary.values()))
+
+for i in ProduceDictionary:
+    total = ProduceDictionary[i]['cost'] * ProduceDictionary[i]['amt_sold']
+    # the [i] is referring to the produce name at the beginning of each dictionary. The [cost] and [amt_sold] is drilling down items in the dictionary
+    print(total)
+    # this will print the total from each dictionary, it is not necessary in this problem, just for understanding
+
+    stated_total = ProduceDictionary[i]['total']
+    # this function pulls every integer that comes after 'total' from each dictionary
+
+    if total != stated_total:
+        # if the total that is calculated does not match up to the total in the dictionary, then it will print the elements from the dictionary
+        print(f'produce name: {i}')
+        print(f'cost: {i}')
+        print(f'amt_sold: {stated_total}')
+        print(f'total: {total}')
