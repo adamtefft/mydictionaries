@@ -38,12 +38,22 @@ import json
 # PROBLEM 1
 print("This is the solution for problem 1")
 infile = open('eq_data.json', 'r')
-earthquake = json.load(infile)
+earthquakes = json.load(infile)
 
-print(len())
-print(type(earthquake))
+# I am thinking that the "type" is an indicator of how many earthquakes there are, so we would need to count that
+print(type(earthquakes))
 
-print(len(earthquake))
+print(len(earthquakes))
 print("This is the end of problem 1")
 
+mag = ("The magnitude of the earthquake, this will be a function that drills down the dictionaries to finally find the magnitude")
+
+
 # PROBLEM 2
+if mag in ["mag"] > 6:
+    for i in earthquakes:
+     # location = earthquake["metadata"]["features"]["properties"]
+        location = earthquakes[i]["type"]["metadata"]["features"]["properties"]["mag"]
+        magnitude = earthquakes[i]["type"]["metadata"]["features"]["properties"]["mag"]
+        print(location)
+        print(magnitude)
