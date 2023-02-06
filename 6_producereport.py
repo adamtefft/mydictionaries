@@ -211,11 +211,11 @@ ProduceDictionary = {
 # print(sum(ProduceDictionary.values()))
 
 for i in ProduceDictionary:
-    total = ProduceDictionary[i]['cost'] * ProduceDictionary[i]['amt_sold']
+    total = round(ProduceDictionary[i]['cost']
+                  * ProduceDictionary[i]['amt_sold'], 2)
     # FIGURE OUT HOW TO FORMAT TO 2 DECIMAL PLACES
 
     # the [i] is referring to the produce name (the first dictionary) inside the big dictionary, ProduceDictionary. The [cost] and [amt_sold] is drilling down items in the dictionary
-    print(total)
     # this will print the total from each dictionary, it is not necessary in this problem, just for understanding
 
     stated_total = ProduceDictionary[i]['total']
