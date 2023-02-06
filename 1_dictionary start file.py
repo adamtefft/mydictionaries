@@ -12,7 +12,9 @@ print()
 print('*****  start section 1 - print dictionary ********')
 print()
 
+
 print(mydictionary)
+print(phonebook)
 
 print(len(phonebook))
 
@@ -28,10 +30,10 @@ print()
 
 print(phonebook['Chris'])
 
-name = "Chris"
+name = input("What is the name you are looking for?")
 
 if name in phonebook:
-    print(phonebook[name])
+    print("Name:", phonebook[name])
 else:
     print(f"{name} does not exist in the phonebook")
 
