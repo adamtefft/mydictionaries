@@ -72,7 +72,20 @@ for i in earthquakes["features"]:
         print("Longitude:", longitude)
         print("Latitude:", latitude)
         print("\n\n")
+
+eq_dict = {}
+for i in earthquakes:
+    case = {'key1': value, 'key2': value, 'key3': value}
+    case_list.update(case)
+'''
 for i in eq_dict:
-    print()
+    print("Location:", location)
+    print("Magnitude:", magnitude)
+    print("Longitude:", longitude)
+    print("Latitude:", latitude)
+    print("\n\n")
+'''
+
+print(eq_dict)
 print("This is the end of problem 2")
 print("----------------------------")
