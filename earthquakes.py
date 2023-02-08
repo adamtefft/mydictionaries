@@ -36,6 +36,7 @@ Latitude: 14.7628
 import json
 
 # PROBLEM 1
+
 infile = open('eq_data.json', 'r')
 
 earthquakes = json.load(infile)
@@ -61,7 +62,62 @@ mag = ("The magnitude of the earthquake, this will be a function that drills dow
 print("This is the solution for problem 2")
 print("\n")
 
+eq_list = []
+eq_dict = {}
 
+for i in earthquakes["features"]:
+    if i["properties"]["mag"] > 6:
+        # location = earthquake["metadata"]["features"]["properties"]
+        # Why is this only printing out the last item in the loop?
+        # It looks like it is deleting each item in the loop that has been added previously
+        x = eq_dict["Location"] = i["properties"]["place"]
+        y = eq_dict["Magnitude"] = i["properties"]["mag"]
+        z = eq_dict["Longitude"] = i["geometry"]["coordinates"][0]
+        a = eq_dict["Latitude"] = i["geometry"]["coordinates"][1]
+        eq_list.append(x)
+        eq_list.append(y)
+        eq_list.append(z)
+        eq_list.append(a)
+
+print(eq_list)
+
+
+'''
+    print("Location:", eq_dict["Location"])
+    print("Magnitude:", eq_dict['Magnitude'])
+    print("Longitude", eq_dict["Longitude"])
+    print("Latitude", eq_dict["Latitude"])
+    print("\n")
+
+
+    '''
+
+print("\n")
+print("This is the end of problem 2")
+print("----------------------------")
+print("This is the soliution for problem 3")
+print("\n")
+
+
+for i in eq_list:
+    print(i)
+
+
+print("\n")
+print("This is the end of problem 3")
+print("----------------------------")
+
+'''
+    print(f'Cost: ${cost}')
+    print(f'Incorrect Total: ${stated_total}')
+    print(f'Correct Total: ${total}')
+    print("\n\n")
+
+    total = round(ProduceDictionary[i]['cost']
+                  * ProduceDictionary[i]['amt_sold'], 2)
+    '''
+
+'''
 for i in earthquakes["features"]:
     if i["properties"]["mag"] > 6:
         eq_dict = {}
@@ -72,13 +128,9 @@ for i in earthquakes["features"]:
         eq_dict["Magnitude"] = i["properties"]["mag"]
         eq_dict["Longitude"] = i["geometry"]["coordinates"][0]
         eq_dict["Latitude"] = i["geometry"]["coordinates"][1]
-        print(eq_dict)
         print("Location:", eq_dict["Location"])
         print("Magnitude:", eq_dict['Magnitude'])
         print("Longitude", eq_dict["Longitude"])
         print("Latitude", eq_dict["Latitude"])
         print("\n")
-
-
-print("This is the end of problem 2")
-print("----------------------------")
+'''
