@@ -78,6 +78,7 @@ print("This is the soliution for problem 3")
 print("\n")
 
 # PROBLEM 3
+
 # The * removes the brackets when it prints it out as a list
 for i in eq_dict:
     print("Location:", *[i])
