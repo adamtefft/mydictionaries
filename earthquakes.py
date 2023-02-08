@@ -62,20 +62,16 @@ mag = ("The magnitude of the earthquake, this will be a function that drills dow
 print("This is the solution for problem 2")
 print("\n")
 
-eq_list = []
 eq_dict = {}
 
 for i in earthquakes["features"]:
     if i["properties"]["mag"] > 6:
-        # location = earthquake["metadata"]["features"]["properties"]
-        # Why is this only printing out the last item in the loop?
-        # It looks like it is deleting each item in the loop that has been added previously
-        placelist = []
-        placelist.append([i["properties"]["place"]])
-        placelist.append([i["properties"]["mag"]])
-        placelist.append([i["geometry"]["coordinates"][0]])
-        placelist.append([i["geometry"]["coordinates"][1]])
-        eq_dict[i["properties"]["place"]] = placelist
+        eq_list = []
+        # eq_list.append([i["properties"]["place"]])
+        eq_list.append([i["properties"]["mag"]])
+        eq_list.append([i["geometry"]["coordinates"][0]])
+        eq_list.append([i["geometry"]["coordinates"][1]])
+        eq_dict[i["properties"]["place"]] = eq_list
 
 print(eq_dict)
 
@@ -85,11 +81,13 @@ print("----------------------------")
 print("This is the soliution for problem 3")
 print("\n")
 
+# What does the "*" do?
 for i in eq_dict:
-    print(*eq_dict[i][0])
-    print(*eq_dict[i][1])
-    print(*eq_dict[i][2])
-    print(*eq_dict[i][3])
+    print("Location:", *eq_dict[i][0])
+    print("Magnitude:", *eq_dict[i][1])
+    print("Longitude:", *eq_dict[i][2])
+    print("Latitude:", *eq_dict[i][3])
+    print("\n")
 
 
 print("\n")
