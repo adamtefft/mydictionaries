@@ -46,14 +46,10 @@ print("This is the solution for problem 1")
 print("\n")
 print("Number of Earthquakes:", len(earthquakes["features"]))
 
-# I am thinking that the "type" is an indicator of how many earthquakes there are, so we would need to count that
-
-# print("Number of Earthquakes:", earthquakes["metadata"]["count"])
 
 print("\n")
 print("This is the end of problem 1")
 print("----------------------------")
-mag = ("The magnitude of the earthquake, this will be a function that drills down the dictionaries to finally find the magnitude")
 
 
 # PROBLEM 2
@@ -81,37 +77,14 @@ print("----------------------------")
 print("This is the soliution for problem 3")
 print("\n")
 
-# What does the "*" do?
+# PROBLEM 3
+# The * removes the brackets when it prints it out as a list
 for i in eq_dict:
-    print("Location:", *eq_dict[i][0])
-    print("Magnitude:", *eq_dict[i][1])
-    print("Longitude:", *eq_dict[i][2])
-    print("Latitude:", *eq_dict[i][3])
+    print("Location:", *[i])
+    print("Magnitude:", *eq_dict[i][0])
+    print("Longitude:", *eq_dict[i][1])
+    print("Latitude:", *eq_dict[i][2])
     print("\n")
 
-
-print("\n")
 print("This is the end of problem 3")
 print("----------------------------")
-
-
-'''
-
-This was my old code for step #2
-
-for i in earthquakes["features"]:
-    if i["properties"]["mag"] > 6:
-        eq_dict = {}
-        # location = earthquake["metadata"]["features"]["properties"]
-        # Why is this only printing out the last item in the loop?
-        # It looks like it is deleting each item in the loop that has been added previously
-        eq_dict["Location"] = i["properties"]["place"]
-        eq_dict["Magnitude"] = i["properties"]["mag"]
-        eq_dict["Longitude"] = i["geometry"]["coordinates"][0]
-        eq_dict["Latitude"] = i["geometry"]["coordinates"][1]
-        print("Location:", eq_dict["Location"])
-        print("Magnitude:", eq_dict['Magnitude'])
-        print("Longitude", eq_dict["Longitude"])
-        print("Latitude", eq_dict["Latitude"])
-        print("\n")
-'''
