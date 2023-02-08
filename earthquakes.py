@@ -47,7 +47,8 @@ print("Number of Earthquakes:", len(earthquakes["features"]))
 
 # I am thinking that the "type" is an indicator of how many earthquakes there are, so we would need to count that
 
-print("Number of Earthquakes:", earthquakes["metadata"]["count"])
+# print("Number of Earthquakes:", earthquakes["metadata"]["count"])
+
 print("\n")
 print("This is the end of problem 1")
 print("----------------------------")
@@ -56,36 +57,28 @@ mag = ("The magnitude of the earthquake, this will be a function that drills dow
 
 # PROBLEM 2
 
-eq_dict = {}
 
 print("This is the solution for problem 2")
 print("\n")
+
+
 for i in earthquakes["features"]:
     if i["properties"]["mag"] > 6:
+        eq_dict = {}
         # location = earthquake["metadata"]["features"]["properties"]
-        location = i["properties"]["place"]
-        magnitude = i["properties"]["mag"]
-        longitude = i["geometry"]["coordinates"][0]
-        latitude = i["geometry"]["coordinates"][1]
-        print("Location:", location)
-        print("Magnitude:", magnitude)
-        print("Longitude:", longitude)
-        print("Latitude:", latitude)
-        print("\n\n")
+        # Why is this only printing out the last item in the loop?
+        # It looks like it is deleting each item in the loop that has been added previously
+        eq_dict["Location"] = i["properties"]["place"]
+        eq_dict["Magnitude"] = i["properties"]["mag"]
+        eq_dict["Longitude"] = i["geometry"]["coordinates"][0]
+        eq_dict["Latitude"] = i["geometry"]["coordinates"][1]
+        print(eq_dict)
+        print("Location:", eq_dict["Location"])
+        print("Magnitude:", eq_dict['Magnitude'])
+        print("Longitude", eq_dict["Longitude"])
+        print("Latitude", eq_dict["Latitude"])
+        print("\n")
 
-eq_dict = {}
-for i in earthquakes:
-    case = {'key1': value, 'key2': value, 'key3': value}
-    case_list.update(case)
-'''
-for i in eq_dict:
-    print("Location:", location)
-    print("Magnitude:", magnitude)
-    print("Longitude:", longitude)
-    print("Latitude:", latitude)
-    print("\n\n")
-'''
 
-print(eq_dict)
 print("This is the end of problem 2")
 print("----------------------------")
