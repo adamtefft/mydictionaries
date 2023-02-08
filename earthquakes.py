@@ -70,27 +70,14 @@ for i in earthquakes["features"]:
         # location = earthquake["metadata"]["features"]["properties"]
         # Why is this only printing out the last item in the loop?
         # It looks like it is deleting each item in the loop that has been added previously
-        x = eq_dict["Location"] = i["properties"]["place"]
-        y = eq_dict["Magnitude"] = i["properties"]["mag"]
-        z = eq_dict["Longitude"] = i["geometry"]["coordinates"][0]
-        a = eq_dict["Latitude"] = i["geometry"]["coordinates"][1]
-        eq_list.append(x)
-        eq_list.append(y)
-        eq_list.append(z)
-        eq_list.append(a)
+        placelist = []
+        placelist.append([i["properties"]["place"]])
+        placelist.append([i["properties"]["mag"]])
+        placelist.append([i["geometry"]["coordinates"][0]])
+        placelist.append([i["geometry"]["coordinates"][1]])
+        eq_dict[i["properties"]["place"]] = placelist
 
-print(eq_list)
-
-
-'''
-    print("Location:", eq_dict["Location"])
-    print("Magnitude:", eq_dict['Magnitude'])
-    print("Longitude", eq_dict["Longitude"])
-    print("Latitude", eq_dict["Latitude"])
-    print("\n")
-
-
-    '''
+print(eq_dict)
 
 print("\n")
 print("This is the end of problem 2")
@@ -98,26 +85,22 @@ print("----------------------------")
 print("This is the soliution for problem 3")
 print("\n")
 
-
-for i in eq_list:
-    print(i)
+for i in eq_dict:
+    print(*eq_dict[i][0])
+    print(*eq_dict[i][1])
+    print(*eq_dict[i][2])
+    print(*eq_dict[i][3])
 
 
 print("\n")
 print("This is the end of problem 3")
 print("----------------------------")
 
-'''
-    print(f'Cost: ${cost}')
-    print(f'Incorrect Total: ${stated_total}')
-    print(f'Correct Total: ${total}')
-    print("\n\n")
-
-    total = round(ProduceDictionary[i]['cost']
-                  * ProduceDictionary[i]['amt_sold'], 2)
-    '''
 
 '''
+
+This was my old code for step #2
+
 for i in earthquakes["features"]:
     if i["properties"]["mag"] > 6:
         eq_dict = {}
